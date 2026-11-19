@@ -1,0 +1,121 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  overflow: hidden;
+  background: #87bde2;
+  color: white;
+  font-family: Arial, sans-serif;
+  user-select: none;
+  touch-action: none;
+}
+#game { position: fixed; inset: 0; }
+canvas { display: block; }
+
+header {
+  position: absolute; top: 14px; left: 17px; right: 17px;
+  display: flex; justify-content: space-between; align-items: center;
+  pointer-events: none;
+}
+.logo { font-size: 29px; font-weight: 1000; text-shadow: 2px 2px 5px #000; }
+.logo span { color: #6aef87; }
+.money {
+  background: #101b25dd; padding: 10px 14px;
+  border: 1px solid #ffffff40; border-radius: 12px;
+  font-size: 20px; font-weight: bold;
+}
+.hud {
+  position: absolute; top: 72px; left: 18px;
+  text-shadow: 1px 2px 4px #000;
+}
+#district { font-weight: 900; letter-spacing: 2px; }
+#status { font-size: 13px; margin-top: 5px; color: #d7ffd9; }
+#wanted { color: #ffd94d; font-size: 24px; margin-top: 6px; }
+.rightHud { position: absolute; right: 18px; bottom: 130px; }
+#speedbox {
+  display: none; background: #101820dd; border: 1px solid #ffffff44;
+  border-radius: 12px; padding: 10px 16px; text-align: center;
+}
+#speed { font-size: 30px; }
+#speedbox small { display: block; font-size: 10px; letter-spacing: 2px; }
+#weaponbox {
+  background: #101820dd; margin-top: 8px; padding: 9px;
+  border: 1px solid #ffffff35; border-radius: 10px; font-size: 12px;
+}
+#missionBox {
+  position: absolute; left: 18px; bottom: 18px; width: 250px;
+  padding: 13px; background: #101820dd; border: 1px solid #ffffff40;
+  border-radius: 12px;
+}
+#missionBox h3 { font-size: 12px; color: #ffe36a; margin-bottom: 8px; }
+#missionBox strong { font-size: 14px; }
+#missionBox p { font-size: 12px; color: #ddd; line-height: 1.5; margin-top: 5px; }
+.progress { height: 6px; background: #ffffff25; margin-top: 10px; border-radius: 5px; overflow: hidden; }
+#progressBar { height: 100%; width: 0; background: #6aef87; transition: width .2s; }
+#interactBtn {
+  display: none; position: absolute; left: 50%; bottom: 28%;
+  transform: translateX(-50%); padding: 13px 23px;
+  background: #172832ee; color: white; border: 1px solid white;
+  border-radius: 12px; font-weight: bold;
+}
+#menuOverlay {
+  display: none; position: fixed; inset: 0; z-index: 10;
+  background: #0009; justify-content: center; align-items: center; padding: 18px;
+}
+.menuCard {
+  position: relative; width: min(440px, 100%); max-height: 82vh;
+  overflow: auto; background: #17242d; border: 1px solid #ffffff40;
+  border-radius: 18px; padding: 24px;
+}
+.menuCard h1 { color: #70ed8c; margin-bottom: 17px; font-size: 24px; }
+.close {
+  float: right; border: 0; color: white; background: #ffffff20;
+  padding: 8px 12px; border-radius: 8px;
+}
+.menuCard p { color: #ddd; font-size: 14px; margin: 8px 0; line-height: 1.5; }
+.menuCard button.action {
+  display: block; width: 100%; padding: 13px; margin: 8px 0;
+  border: 1px solid #ffffff25; border-radius: 10px;
+  background: #2b414d; color: white; font-weight: bold;
+}
+.menuCard button.action:active { background: #4a7184; }
+#toast {
+  display: none; position: absolute; top: 28%; left: 50%;
+  transform: translateX(-50%); background: #14231dee;
+  border: 1px solid #ffffff45; border-radius: 12px;
+  padding: 12px 18px; text-align: center; font-weight: bold;
+  max-width: 90%;
+}
+#mobileControls { display: none; }
+#joystick {
+  position: absolute; bottom: 25px; left: 18px; width: 130px; height: 130px;
+  border-radius: 50%; background: #0005; border: 2px solid #ffffff55;
+}
+#knob {
+  position: absolute; left: 35px; top: 35px; width: 56px; height: 56px;
+  border-radius: 50%; background: #ffffffbb; border: 2px solid white;
+}
+.buttons {
+  position: absolute; bottom: 25px; right: 15px;
+  display: grid; grid-template-columns: 68px 68px; gap: 9px;
+}
+.buttons button {
+  height: 56px; border-radius: 14px; background: #17232cdd;
+  border: 1px solid #ffffff55; color: white; font-weight: bold;
+}
+#sprintBtn.active { background: #42844e; }
+#pcHelp {
+  position: absolute; bottom: 13px; right: 13px;
+  font-size: 10px; background: #0007; padding: 8px; border-radius: 7px;
+}
+@media (pointer: coarse) {
+  #mobileControls { display: block; }
+  #pcHelp { display: none; }
+  #missionBox { bottom: 175px; width: 210px; padding: 10px; }
+  .rightHud { bottom: 175px; }
+  #interactBtn { bottom: 44%; }
+}
