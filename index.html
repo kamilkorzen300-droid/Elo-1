@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>GTA VI - Open World</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game"></div>
+
+  <header>
+    <div class="logo">GTA <span>VI</span></div>
+    <div class="money">💵 $<span id="cash">500</span></div>
+  </header>
+
+  <section class="hud">
+    <div id="district">VICE CITY</div>
+    <div id="status">Eksploruj miasto</div>
+    <div id="wanted">☆☆☆☆☆</div>
+  </section>
+
+  <section class="rightHud">
+    <div id="speedbox">
+      <strong id="speed">0</strong>
+      <small>KM/H</small>
+    </div>
+    <div id="weaponbox">🎯 <span id="weapon">Blaster</span></div>
+  </section>
+
+  <section id="missionBox">
+    <h3>📋 MISJA</h3>
+    <strong id="missionTitle">Pierwsze kroki</strong>
+    <p id="missionDesc">Podejdź do znacznika misji.</p>
+    <div class="progress"><div id="progressBar"></div></div>
+  </section>
+
+  <button id="interactBtn">INTERAKCJA</button>
+
+  <section id="menuOverlay">
+    <div class="menuCard">
+      <button id="closeMenu" class="close">✕</button>
+      <h1 id="menuTitle">MENU</h1>
+      <div id="menuContent"></div>
+    </div>
+  </section>
+
+  <div id="toast"></div>
+
+  <div id="mobileControls">
+    <div id="joystick">
+      <div id="knob"></div>
+    </div>
+    <div class="buttons">
+      <button id="jumpBtn">SKOK</button>
+      <button id="sprintBtn">BIEG</button>
+      <button id="carBtn">AUTO</button>
+      <button id="actionBtn">AKCJA</button>
+      <button id="brakeBtn">HAMULEC</button>
+    </div>
+  </div>
+
+  <div id="pcHelp">
+    WASD ruch • SHIFT sprint • SPACE skok • E interakcja • 1-3 wyposażenie • ESC menu
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
